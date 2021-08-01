@@ -14,7 +14,8 @@ class impBankAccount implements IBankAccount{
         console.log("This is balance method");
     }
 
-    printMessage: () => {};
+    //arrow functions
+    //printMessage: () => {};
     
 }
 
