@@ -1,0 +1,39 @@
+<!-- This is the view part of MVC -->
+<h2>{{message}}</h2> <!-- interpolation binding (model to view) -->
+
+<p>Customer Code: {{custObj.custCode}}</p>
+<p>Customer Name: {{custObj.custName}}</p>
+<p>Customer Amount: {{custObj.custAmount}}</p>
+
+<!-- <h3>Property Binding (component/model to view)</h3>
+<p>Customer Code: <input type="text" name="custCode" [value]="custObj.custCode"></p>
+<p>Customer Name: <input type="text" name="custName" [value]="custObj.custName"></p>
+<p>Customer Amount: <input type="text" name="custAmount" [value]="custObj.custAmount"></p>
+
+<h3>Event Binding (view to component/model)</h3>
+<p>Customer Code: <input type="text" name="custCode" (input)="custObj.custCode=$any($event.target).value"></p>
+<p>Customer Name: <input type="text" name="custName" (input)="custObj.custName=$any($event.target).value"></p>
+<p>Customer Amount: <input type="text" name="custAmount" (input)="custObj.custAmount=$any($event.target).value"></p> -->
+
+<!-- two way binding with ngModel(component/module to view to component/module)-->
+<h3>Two Way Binding (component to view to component)</h3>
+<p>Customer Code: <input type="text" name="custCode" [(ngModel)]="custObj.custCode"></p>
+<p>Customer Name: <input type="text" name="custName" [(ngModel)]="custObj.custName"></p>
+<p>Customer Amount: <input type="text" name="custAmount" [(ngModel)]="custObj.custAmount"></p>
+
+<hr>
+
+<h2>interpolation binding with customerObj1</h2>
+<p>Customer Code: {{customerObj1.customerCode}}</p>
+<p>Customer Name: {{customerObj1.customerName}}</p>
+<p>Customer Amount: {{customerObj1.customerAmount}}</p>
+
+<h2>interpolation binding with customerObj2</h2>
+<p>Customer Code: {{customerObj2.customerCode}}</p>
+<p>Customer Name: {{customerObj2.customerName}}</p>
+<p>Customer Amount: {{customerObj2.customerAmount}}</p>
+
+<h2>interpolation binding with Interface ICustomer customerObj3</h2>
+<p>Customer Code: {{customerObj3.CustomerCode}}</p>
+<p>Customer Name: {{customerObj3.CustomerName}}</p>
+<p>Customer Amount: {{customerObj3.CustomerAmount}}</p>
