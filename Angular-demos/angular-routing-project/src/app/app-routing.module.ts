@@ -15,6 +15,7 @@ export const applicationRoutes: Routes = [      //must export this so it can be 
     { path: 'contact', component: ContactComponent },
 
     { path: 'service', component: ServiceComponent, children: [     //child routes
+        {path: '', redirectTo: 'employee-service', pathMatch: 'full' }, //set the service route to default to employee-service
         {path: 'employee-service', component: EmployeeServiceComponent },
         {path: 'customer-service', component: CustomerServiceComponent }
     ] },
