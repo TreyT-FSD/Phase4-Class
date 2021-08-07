@@ -1,1 +1,23 @@
-<p>contact works!</p>
+<h2>Contact Form</h2>
+
+<form>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="id" placeholder="Enter your Id" [(ngModel)]="visitor.id">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" placeholder="Enter your Name" [(ngModel)]="visitor.name">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="email" placeholder="Enter your Email" [(ngModel)]="visitor.email">
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" name="contactNo" placeholder="Enter your Contact Number" [(ngModel)]="visitor.contactNo">
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" name="message" rows="5" placeholder="Enter your Message" [(ngModel)]="visitor.message"></textarea>
+    </div>
+    <div class="mb-3">
+        <input type="submit" (click)="onSubmit()" value="Submit" class="btn btn-success" /> |
+        <input type="reset" value="Clear Fields" class="btn btn-danger" />
+    </div>
+</form>

@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CustomerServiceComponent } from "./customer-service/customer-service.component";
+import { CustomersComponent } from "./customers/customers.component";
 import { EmployeeServiceComponent } from "./employee-service/employee-service.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
@@ -13,6 +14,7 @@ export const applicationRoutes: Routes = [      //must export this so it can be 
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'customers', component: CustomersComponent },
 
     { path: 'service', component: ServiceComponent, children: [     //child routes
         {path: '', redirectTo: 'employee-service', pathMatch: 'full' }, //set the service route to default to employee-service

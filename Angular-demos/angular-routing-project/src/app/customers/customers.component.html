@@ -1,0 +1,20 @@
+<h2>Customer List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Customer Amout</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customerList, let i=index"> <!--index is a built in when using ngFor to loop over things. it counts from 1 to nummber of items in the list-->
+            <td>{{i+1}}</td>
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.customerAmount}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import { ServiceComponent } from './service/service.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeServiceComponent } from './employee-service/employee-service.component';
 import { CustomerServiceComponent } from './customer-service/customer-service.component';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   declarations: [  //app component files where deleted so we also delete the declaration
@@ -21,10 +23,12 @@ import { CustomerServiceComponent } from './customer-service/customer-service.co
     ServiceComponent,
     PageNotFoundComponent,
     EmployeeServiceComponent,
-    CustomerServiceComponent
+    CustomerServiceComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(applicationRoutes)    //allows configuration of routes in the application
   ],
   providers: [],
