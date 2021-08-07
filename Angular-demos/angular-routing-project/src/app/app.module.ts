@@ -9,6 +9,8 @@ import { ContactComponent } from './contact/contact.component';
 import { applicationRoutes } from './app-routing.module';
 import { ServiceComponent } from './service/service.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmployeeServiceComponent } from './employee-service/employee-service.component';
+import { CustomerServiceComponent } from './customer-service/customer-service.component';
 
 @NgModule({
   declarations: [  //app component files where deleted so we also delete the declaration
@@ -17,7 +19,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutComponent,
     ContactComponent,
     ServiceComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeeServiceComponent,
+    CustomerServiceComponent
   ],
   imports: [
     BrowserModule,

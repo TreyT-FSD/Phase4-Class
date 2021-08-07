@@ -1,6 +1,8 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
+import { CustomerServiceComponent } from "./customer-service/customer-service.component";
+import { EmployeeServiceComponent } from "./employee-service/employee-service.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ServiceComponent } from "./service/service.component";
@@ -11,7 +13,12 @@ export const applicationRoutes: Routes = [      //must export this so it can be 
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'service', component: ServiceComponent },
+
+    { path: 'service', component: ServiceComponent, children: [     //child routes
+        {path: 'employee-service', component: EmployeeServiceComponent },
+        {path: 'customer-service', component: CustomerServiceComponent }
+    ] },
+
     {path: '**', component: PageNotFoundComponent }     //this is a wildcard path that acts as a catch all. any routes that dont exist above go to our error page
 ]
 
