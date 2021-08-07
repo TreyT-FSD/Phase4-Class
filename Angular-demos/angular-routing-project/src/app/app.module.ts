@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
+import { ContactComponent } from './contact/contact.component';
+import { applicationRoutes } from './app-routing.module';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [  //app component files where deleted so we also delete the declaration
+    MainComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    ServiceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(applicationRoutes)    //allows configuration of routes in the application
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainComponent]  //configure the new main component as the starting point of our app
 })
 export class AppModule { }
