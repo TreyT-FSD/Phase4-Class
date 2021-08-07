@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
 import { applicationRoutes } from './app-routing.module';
 import { ServiceComponent } from './service/service.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [  //app component files where deleted so we also delete the declaration
@@ -15,7 +16,8 @@ import { ServiceComponent } from './service/service.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ServiceComponent
+    ServiceComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
