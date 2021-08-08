@@ -22,4 +22,20 @@ export class UsersComponent implements OnInit {
       console.log(error);
     });
   }
+
+  deleteUser(id: any): void {
+    console.log("Deleting user");
+    if(confirm('Are you Sure?')){
+      this._http.delete("https://jsonplaceholder.typicode.com/users/" + id).subscribe(
+        (result)=> {
+          console.log(result);
+          alert("User Deleted Successfully.");
+        }, 
+        (error)=>{
+          console.log("There was some error during delete.");
+          console.log(error);
+        });
+    }
+    
+  }
 }
