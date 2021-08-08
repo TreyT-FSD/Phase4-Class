@@ -1,1 +1,24 @@
-<p>users works!</p>
+
+<div class="container">
+    <h2>User List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <a [routerLink]="['/user-detail', user.id]" class="btn btn-secondary">View Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
