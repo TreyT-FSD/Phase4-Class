@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmployeeAddComponent } from './employee-add/employee-add.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserAddComponent } from './user-add/user-add.component';
@@ -14,6 +16,9 @@ const routes: Routes = [
   { path: 'user-detail/:id', component: UserDetailComponent},
   { path: 'user-add', component: UserAddComponent},
   { path: 'user-update/:id', component: UserUpdateComponent},
+  { path: 'employees', component: EmployeesComponent},
+  { path: 'employee-add', component: EmployeeAddComponent},
+
   { path: '**', component: PageNotFoundComponent}
 ];
 

@@ -1,0 +1,27 @@
+<form [formGroup]="employeeForm">
+    <div class='mb-3'>
+        <input type="text" name="name" formControlName="name" placeholder="Employee Name" class="form-control"
+            [(ngModel)]="employee.name">
+        <div *ngIf="f.name.touched && f.name.invalid" class="text-danger">
+            <div *ngIf="f.name.errors?.required">Name is required.</div>
+        </div>
+    </div>
+    <div class='mb-3'>
+        <input type="text" name="salary" formControlName="salary" placeholder="Employee Salary" class="form-control"
+            [(ngModel)]="employee.salary">
+        <div *ngIf="f.salary.touched && f.salary.invalid" class="text-danger">
+            <div *ngIf="f.salary.errors?.required">Salary is required.</div>
+        </div>
+    </div>
+    <div class='mb-3'>
+        <input type="text" name="designation" formControlName="designation" placeholder="Employee Designation"
+            class="form-control" [(ngModel)]="employee.designation">
+        <div *ngIf="f.designation.touched && f.designation.invalid" class="text-danger">
+            <div *ngIf="f.designation.errors?.required">Designation is required.</div>
+        </div>
+    </div>
+    <input type="submit" value="Add Employee" (click)="addEmployee()" class="btn btn-success"> |
+    <input type="reset" value="Clear Fields" class="btn btn-danger"> |
+    <a class="btn btn-secondary" routerLink="/employees">Back</a>
+
+</form>
