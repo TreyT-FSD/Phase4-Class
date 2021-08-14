@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee';
 import { EmployeeService } from '../services/employee.service';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, MinLengthValidator } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-add',
@@ -13,9 +14,9 @@ export class EmployeeAddComponent implements OnInit {
   employee: Employee = new Employee();
   employeeForm: FormGroup;
 
-  constructor(private _employeeService: EmployeeService, private _formBuilder: FormBuilder) {
+  constructor(private _employeeService: EmployeeService, private _formBuilder: FormBuilder, private _router: Router) {
     this.employeeForm = this._formBuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(4)]],
       salary: [0, [Validators.required]],
       designation: ['', [Validators.required]],
     });
@@ -24,28 +25,24 @@ export class EmployeeAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //this is a shortcut to make it easier to access the form validators in the view
   get f() {
     return this.employeeForm.controls;
   }
 
   addEmployee() {
 
-    //reactive form validation
-    if (this.employeeForm.valid) {
-      console.log(this.employee);  //the employee from the form
-      this._employeeService.AddEmployee(this.employee).subscribe(
-        result => {
-          console.log(result);  //the employee that was just added via the service
-          alert("Employee Added Successfully.")
-        }, error => {
-          console.log(error);
-        });
-    } else{
-      alert("Form is incomplete.")
-      console.log("form invalid");
-      
-    }
-    
+    //reactive form validation. more at https://bit.ly/3AIOCyh
+
+    console.log(this.employee);  //the employee from the form
+    this._employeeService.AddEmployee(this.employee).subscribe(
+      result => {
+        console.log(result);  //the employee that was just added via the service
+        alert("Employee Added Successfully.")
+        this._router.navigate(['/employees']);
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

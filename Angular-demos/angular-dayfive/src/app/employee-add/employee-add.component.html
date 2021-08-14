@@ -1,4 +1,4 @@
-<form [formGroup]="employeeForm">
+<form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
     <div class='mb-3'>
         <input type="text" name="name" formControlName="name" placeholder="Employee Name" class="form-control"
             [(ngModel)]="employee.name">
@@ -20,7 +20,7 @@
             <div *ngIf="f.designation.errors?.required">Designation is required.</div>
         </div>
     </div>
-    <input type="submit" value="Add Employee" (click)="addEmployee()" class="btn btn-success"> |
+    <input type="submit" value="Add Employee" [disabled]="!employeeForm.valid" class="btn btn-success"> |
     <input type="reset" value="Clear Fields" class="btn btn-danger"> |
     <a class="btn btn-secondary" routerLink="/employees">Back</a>
 

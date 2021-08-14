@@ -8,27 +8,30 @@ import { Employee } from "../models/employee";
 export class EmployeeService{
 
     messaage : string = "Employee Management System";
+    API_URL: string = "http://localhost:3000";
 
     constructor(private _http: HttpClient){}
 
     getEmployees(): Observable<Employee[]> {
-        return this._http.get<Employee[]>('http://localhost:3000/employees');
+        return this._http.get<Employee[]>(`${this.API_URL}/employees`);
     }
 
-    getEmployeeById(){
-
+    getEmployeeById(id:number): Observable<Employee>{
+        return this._http.get<Employee>(`${this.API_URL}/employees/${id}`);
     }
 
     AddEmployee(Employee:Employee): Observable<Employee>{
-        return this._http.post<Employee>('http://localhost:3000/employees', Employee);
+        return this._http.post<Employee>(`${this.API_URL}/employees`, Employee);
 
     }
 
-    DeleteEmployee(id:number){
+    DeleteEmployeeById(id:number): Observable<Employee>{
+        return this._http.delete<Employee>(`${this.API_URL}/employees/${id}`);
 
     }
 
-    UpdateEmployeeById(employee:Employee, id:number){
+    UpdateEmployeeById(updatedEmployee:Employee, id:number): Observable<Employee>{
+        return this._http.put<Employee>(`${this.API_URL}/employees/${id}`, updatedEmployee);
 
     }
 }

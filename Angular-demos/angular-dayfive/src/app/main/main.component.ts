@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  //launch the app with ng serve -o
+  //launch the json-server with mock data using json-server .\employees.json --watch
+
   constructor() { }
 
   ngOnInit(): void {
